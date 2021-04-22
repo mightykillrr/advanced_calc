@@ -46,11 +46,11 @@ def add():
     print(" ")
     values = []
     solution = 0
-    mathon = True
-    while mathon:
+    math_on = True
+    while math_on:
         inp = float(input("[+] "))
         if inp == "":
-            mathon = False
+            math_on = False
         else:
             values.append(inp)
             solution += inp
