@@ -1,5 +1,5 @@
 # Advanced Calculator
-
+Run on Replit.com: [advanced-calc](https://replit.com/join/gbglzygz-mightykillrr1)
 ### About this program
 This is a small yet feature+rich calculator. This can:
 
@@ -24,3 +24,12 @@ This is a small yet feature+rich calculator. This can:
   [+] Circle\
   [+] Pentagon(Soon)\
   [+] Hexagon(Soon)
+  
+  ###### Preview:
+![--](img/prev.jpg)
+
+ 
+  #### Known bugs:
+   -copy to clipboard function doesn't work on Replit
+
+> *This project was made as a fun practice project during my Python learning course. I hope you guys like it. Do report any bugs or suggestions!*
