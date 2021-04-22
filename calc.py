@@ -70,12 +70,7 @@ def subtract():
     print("Enter the values one by one, when done, leave the last space blank and press Return/Enter")
     print(" ")
     values = []
-    try:
-        first_val = float(input("[-] "))
-    except ValueError:
-        print("Please enter a number!")
-    values.append(first_val)
-    solution = first_val
+    solution = 0
     math_on = True
     while math_on:
         try:
@@ -86,11 +81,13 @@ def subtract():
                 math_on = False
         except ValueError:
             print("Please enter a number!")
-    for a in values[1:]:
-        if a == "":
+
+    solution += values[0]
+    for _ in values[1:]:
+        if _ == "":
             break
         else:
-            solution -= float(a)
+            solution -= float(_)
     return values, solution
 
 
@@ -100,12 +97,7 @@ def multiply():
     print("Enter the values one by one, when done, leave the last space blank and press Return/Enter")
     print(" ")
     values = []
-    try:
-        first_val = float(input("[-] "))
-    except ValueError:
-        print("Please enter a number!")
-    values.append(first_val)
-    solution = first_val
+    solution = 1
     math_on = True
     while math_on:
         try:
@@ -116,11 +108,11 @@ def multiply():
                 math_on = False
         except ValueError:
             print("Please enter a number!")
-    for a in values[1:]:
-        if a == "":
+    for _ in values:
+        if _ == "":
             break
         else:
-            solution *= a
+            solution *= _
     return values, solution
 
 
@@ -129,10 +121,15 @@ def division():
     print("[/] Division")
     print("Example: a/b, where a is Dividend and b is Divisor")
     print(" ")
-    val1 = float(input("[/] Enter the Dividend(a): "))
-    val2 = float(input("[/] Enter the Divisor(b): "))
-    print("[/] Division")
-    print(" ")
+    val1 = 1
+    val2 = 1
+    try:
+        val1 = float(input("[/] Enter the Dividend(a): "))
+        val2 = float(input("[/] Enter the Divisor(b): "))
+    except ValueError:
+        print("Please enter a number!")
+
+
     return [str(val1), str(val2)], round(val1 // val2, round_val)
 
 
