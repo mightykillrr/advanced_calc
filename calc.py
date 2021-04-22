@@ -51,7 +51,7 @@ def add():
         try:
             inp = input("[+] ")
             if inp != "":
-                values.append(float(inp))
+                values.append(inp)
             elif inp == "":
                 math_on = False
         except ValueError:
@@ -60,7 +60,7 @@ def add():
         if _ == "":
             break
         else:
-            solution += _
+            solution += float(_)
     return values, solution
 
 
@@ -76,7 +76,7 @@ def subtract():
         try:
             inp = input("[-] ")
             if inp != "":
-                values.append(float(inp))
+                values.append(inp)
             elif inp == "":
                 math_on = False
         except ValueError:
@@ -103,7 +103,7 @@ def multiply():
         try:
             inp = input("[*] ")
             if inp != "":
-                values.append(float(inp))
+                values.append(inp)
             elif inp == "":
                 math_on = False
         except ValueError:
@@ -112,7 +112,7 @@ def multiply():
         if _ == "":
             break
         else:
-            solution *= _
+            solution *= float(_)
     return values, solution
 
 
@@ -123,13 +123,14 @@ def division():
     print(" ")
     val1 = 1
     val2 = 1
-    try:
-        val1 = float(input("[/] Enter the Dividend(a): "))
-        val2 = float(input("[/] Enter the Divisor(b): "))
-    except ValueError:
-        print("Please enter a number!")
-
-
+    math_on = True
+    while math_on:
+        try:
+            val1 = float(input("[/] Enter the Dividend(a): "))
+            val2 = float(input("[/] Enter the Divisor(b): "))
+            math_on = False
+        except ValueError:
+            print("Please enter a number!")
     return [str(val1), str(val2)], round(val1 // val2, round_val)
 
 
@@ -138,8 +139,16 @@ def percentof():
     print("[%] Percent of(a% of b)")
     print("Example: a% of b")
     print(" ")
-    a = float(input("[%] Enter first value(a): "))
-    b = float(input("[%] Enter second value(b): "))
+    a = 1
+    b = 1
+    math_on = True
+    while math_on:
+        try:
+            a = float(input("[%] Enter first value(a): "))
+            b = float(input("[%] Enter second value(b): "))
+            math_on = False
+        except ValueError:
+            print("Please enter a number!")
     return [str(a), str(b)], round(((a / 100) * b), round_val)
 
 
@@ -148,8 +157,16 @@ def percentin():
     print("[%] Percent in (% of a in b)")
     print("Example: % of a in b")
     print(" ")
-    a = float(input("[%] Enter the first value(a): "))
-    b = float(input("[%] Enter the second value(b): "))
+    a = 1
+    b = 1
+    math_on = True
+    while math_on:
+        try:
+            a = float(input("[%] Enter the first value(a): "))
+            b = float(input("[%] Enter the second value(b): "))
+            math_on = False
+        except ValueError:
+            print("Please enter a number!")
     return [a, b], round(((a / b) * 100), round_val)
 
 
@@ -158,8 +175,16 @@ def power():
     print("[^] Power of(a^b)")
     print("Example: a^b or a to the power of b")
     print(" ")
-    a = float(input("[^] Enter the Base(a): "))
-    b = float(input("[^] Enter the Power(b): "))
+    a = 1
+    b = 1
+    math_on = True
+    while math_on:
+        try:
+            a = float(input("[^] Enter the Base(a): "))
+            b = float(input("[^] Enter the Power(b): "))
+            math_on = False
+        except ValueError:
+            print("Please enter a number!")
     return [a, b], a ** b
 
 
@@ -168,7 +193,14 @@ def sqrt():
     print("[√] Square Root(√a)")
     print("Example: √a")
     print(" ")
-    a = float(input("[√] Enter the value(a): "))
+    a = 1
+    math_on = True
+    while math_on:
+        try:
+            a = float(input("[√] Enter the value(a): "))
+            math_on = False
+        except ValueError:
+            print("Please enter a number!")
     return [a], round(a ** 0.5, round_val)
 
 
@@ -177,7 +209,14 @@ def sin():
     print("[O] sin(a), a in degrees")
     print("Example: sin(a) where a is in degrees")
     print(" ")
-    a = float(input("[O] Enter the value(a): "))
+    a = 1
+    math_on = True
+    while math_on:
+        try:
+            a = float(input("[O] Enter the value(a): "))
+            math_on = False
+        except ValueError:
+            print("Please enter a number!")
     return [a], round(math.sin(math.radians(a)), round_val)
 
 
@@ -186,7 +225,14 @@ def cos():
     print("[O] cos(a), a in degrees")
     print("Example: cos(a) where a is in degrees")
     print(" ")
-    a = float(input("[O] Enter the value(a): "))
+    a = 1
+    math_on = True
+    while math_on:
+        try:
+            a = float(input("[O] Enter the value(a): "))
+            math_on = False
+        except ValueError:
+            print("Please enter a number!")
     return [a], round(math.cos(math.radians(a)), round_val)
 
 
@@ -195,44 +241,73 @@ def tan():
     print("[O] tan(a), a in degrees")
     print("Example: tan(a) where a is in degrees")
     print(" ")
-    a = float(input("[O] Enter the value(a): "))
+    a = 1
+    math_on = True
+    while math_on:
+        try:
+            a = float(input("[O] Enter the value(a): "))
+            math_on = False
+        except ValueError:
+            print("Please enter a number!")
     return [a], round(math.tan(math.radians(a)), round_val)
 
 
 # square- perimeter, area, diagonal
 def square():
     print("[-] Square")
-    a = float(input("[=] Enter the length of side of the square(a): "))
+    a = 1
+    math_on = True
+    while math_on:
+        try:
+            a = float(input("[=] Enter the length of side of the square(a): "))
+            math_on = False
+        except ValueError:
+            print("Please enter a number!")
     return [a], 4 * a, a ** 2, round((2 ** 0.5) * a, round_val)
 
 
 # rectangle- perimeter, area, diagonal
 def rectangle():
     print("[-] Rectangle")
-    a = float(input("[=] Enter the length of rectangle(l): "))
-    b = float(input("[=] Enter the width of rectangle(w): "))
+    a = 1
+    b = 1
+    math_on = True
+    while math_on:
+        try:
+            a = float(input("[=] Enter the length of rectangle(l): "))
+            b = float(input("[=] Enter the width of rectangle(w): "))
+            math_on = False
+        except ValueError:
+            print("Please enter a number!")
     return [a, b], 2 * (a + b), a * b, round((((a ** 2) + (b ** 2)) ** 0.5), round_val)
 
 
 # circle- circumference, area, diameter
 def circle():
     print("[-] Circle")
-    a = float(input("[=] Enter the radius of the circle(r): "))
+    a = 1
+    math_on = True
+    while math_on:
+        try:
+            a = float(input("[=] Enter the radius of the circle(r): "))
+            math_on = False
+        except ValueError:
+            print("Please enter a number!")
     return [a], round(2 * math.pi * a, round_val), round(math.pi * a * a, round_val), 2 * a
 
 
 # copy result
 def ask_save(rslt):
-    resp2 = input("Do you want to copy the results to your clipboard? ").upper()
+    resp2 = input("Want me to copy the results to your clipboard? Only the solution is copied. ").upper()
     if resp2 in ['YES', 'Y']:
         df = DataFrame([rslt])
         df.to_clipboard(index=False, header=False)
-    return "Copied the result to your clipboard!"
+    return "Successfully copied the result to your clipboard!"
 
 
 # restart app
 def restart_app():
-    resp = input("Do you want to start again? ").upper()
+    resp = input("Do you want to start over? ").upper()
     if resp in ['YES', 'Y']:
         print(" ")
         return True
