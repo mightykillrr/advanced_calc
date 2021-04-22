@@ -48,12 +48,19 @@ def add():
     solution = 0
     math_on = True
     while math_on:
-        inp = float(input("[+] "))
-        if inp == "":
-            math_on = False
+        try:
+            inp = input("[+] ")
+            if inp != "":
+                values.append(float(inp))
+            elif inp == "":
+                math_on = False
+        except ValueError:
+            print("Please enter a number!")
+    for _ in values:
+        if _ == "":
+            break
         else:
-            values.append(inp)
-            solution += inp
+            solution += _
     return values, solution
 
 
@@ -63,17 +70,27 @@ def subtract():
     print("Enter the values one by one, when done, leave the last space blank and press Return/Enter")
     print(" ")
     values = []
-    first_sol = float(input("[-] "))
-    values.append(str(first_sol))
-    solution = first_sol
-    math_on =True
+    try:
+        first_val = float(input("[-] "))
+    except ValueError:
+        print("Please enter a number!")
+    values.append(first_val)
+    solution = first_val
+    math_on = True
     while math_on:
-        inp = input("[-] ")
-        if inp == "":
-            math_on = False
+        try:
+            inp = input("[-] ")
+            if inp != "":
+                values.append(float(inp))
+            elif inp == "":
+                math_on = False
+        except ValueError:
+            print("Please enter a number!")
+    for a in values[1:]:
+        if a == "":
+            break
         else:
-            values.append(str(inp))
-            solution -= float(inp)
+            solution -= float(a)
     return values, solution
 
 
@@ -83,17 +100,27 @@ def multiply():
     print("Enter the values one by one, when done, leave the last space blank and press Return/Enter")
     print(" ")
     values = []
-    first_sol = float(input("[*] "))
-    values.append(str(first_sol))
-    solution = first_sol
+    try:
+        first_val = float(input("[-] "))
+    except ValueError:
+        print("Please enter a number!")
+    values.append(first_val)
+    solution = first_val
     math_on = True
     while math_on:
-        inp = input("[*] ")
-        if inp == "":
-            math_on = False
+        try:
+            inp = input("[*] ")
+            if inp != "":
+                values.append(float(inp))
+            elif inp == "":
+                math_on = False
+        except ValueError:
+            print("Please enter a number!")
+    for a in values[1:]:
+        if a == "":
+            break
         else:
-            values.append(inp)
-            solution *= float(inp)
+            solution *= a
     return values, solution
 
 
@@ -221,12 +248,12 @@ print(
 print("Anyways, lets get started!")
 print(" ")
 
-
 app_on = True
 while True:
     while app_on:
         print("All solutions given by this program are rounded off to 5 decimals as default.")
-        round_new = input("If you wish to change to your choice, enter the number, or leave it blank to use the default: ")
+        round_new = input(
+            "If you wish to change to your choice, enter the number, or leave it blank to use the default: ")
         if round_new == '':
             print("The default of 5 decimal places is being used!")
             print(" ")
