@@ -49,9 +49,9 @@ def add():
     math_on = True
     while math_on:
         try:
-            inp = input("[+] ")
+            inp = input("[*] ")
             if inp != "":
-                values.append(inp)
+                values.append(float(inp))
             elif inp == "":
                 math_on = False
         except ValueError:
@@ -61,6 +61,7 @@ def add():
             break
         else:
             solution += float(_)
+            values[values.index(a)] = str(a)
     return values, solution
 
 
@@ -74,9 +75,9 @@ def subtract():
     math_on = True
     while math_on:
         try:
-            inp = input("[-] ")
+            inp = input("[*] ")
             if inp != "":
-                values.append(inp)
+                values.append(float(inp))
             elif inp == "":
                 math_on = False
         except ValueError:
@@ -88,6 +89,7 @@ def subtract():
             break
         else:
             solution -= float(_)
+            values[values.index(a)] = str(a)
     return values, solution
 
 
@@ -103,7 +105,7 @@ def multiply():
         try:
             inp = input("[*] ")
             if inp != "":
-                values.append(inp)
+                values.append(float(inp))
             elif inp == "":
                 math_on = False
         except ValueError:
@@ -112,7 +114,8 @@ def multiply():
         if _ == "":
             break
         else:
-            solution *= float(_)
+            solution *= _
+            values[values.index(_)] = str(_)
     return values, solution
 
 
@@ -285,15 +288,15 @@ def rectangle():
 # circle- circumference, area, diameter
 def circle():
     print("[-] Circle")
-    a = 1
+    _ = 1
     math_on = True
     while math_on:
         try:
-            a = float(input("[=] Enter the radius of the circle(r): "))
+            _ = float(input("[=] Enter the radius of the circle(r): "))
             math_on = False
         except ValueError:
             print("Please enter a number!")
-    return [a], round(2 * math.pi * a, round_val), round(math.pi * a * a, round_val), 2 * a
+    return [_], round(2 * math.pi * _, round_val), round(math.pi * _ * _, round_val), 2 * _
 
 
 # copy result
@@ -428,8 +431,8 @@ while True:
 
     if not restart_app():
         print(" ")
-        print("-----------------------")
-        print("Thanks for using this app! Hit me up on Discord: mightykiller#9119")
-        print("-----------------------")
+        print("+----------------------->>>")
+        print("|Thanks for using this app! Hit me up on Discord: mightykiller#9119")
+        print("+----------------------->>>")
         sleep(4)
         break
