@@ -1,7 +1,7 @@
 # Advanced Calculator
 Run on Replit.com: [advanced-calc](https://replit.com/join/gbglzygz-mightykillrr1)
 ### About this program
-This is a small yet feature+rich calculator. This can:
+This is a small yet feature-rich calculator. This can:
 
 #### [-] Simple
   [+] Add\
