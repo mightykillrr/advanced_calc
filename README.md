@@ -1,5 +1,5 @@
 # Advanced Calculator
-Run on Replit.com: [advanced-calc](https://replit.com/join/gbglzygz-mightykillrr1)
+Run on Replit.com: [advanced-calc](https://replit.com/@mightykillrr1/advancedcalc#calc.py)
 ### About this program
 This is a small yet feature-rich calculator. This can:
 
