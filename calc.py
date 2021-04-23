@@ -322,16 +322,18 @@ app_on = True
 while True:
     while app_on:
         print("All solutions given by this program are rounded off to 5 decimals as default.")
-        round_new = input("If you wish to change to your choice, enter the number, or leave it blank to use the "
-                          "default: ")
-        if round_new == '':
-            print("The default of [5] decimal places is being used!")
-            print(" ")
-        else:
+        roundnm = True
+        while roundnm:
             try:
-                round_val = int(round_new)
-                print(f"Results are now rounded off at [{round_val}] decimal places.")
-                print(" ")
+                round_new = input("If you wish to change to your choice, enter the number, or leave it blank to use "
+                                  "the default: ")
+                if round_new != "":
+                    round_val = int(round_new)
+                    print(f"Results are now rounded off at [{round_val}] decimal places.")
+                    print(" ")
+                    roundnm = False
+                elif round_new == "":
+                    roundnm = False
             except ValueError:
                 print("Please enter an Integer value!")
 
