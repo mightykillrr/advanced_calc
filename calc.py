@@ -19,10 +19,11 @@ def options():
     print("    5. Percent of(a% of b)                      12. Square")
     print("    6. Percent in(% of a in b)                  13. Rectangle")
     print("                                                14. Circle")
-    print("[+]Advanced")
-    print("    7. Power of(a^b)                         [+]Info and More")
-    print("    8. Square Root(√a)                          15. About this Program")
-    print("                                                16. About Creator")
+    print(" ")
+    print("[+]Advanced                                  [+]Info and More")
+    print("    7. Power of(a^b)                            15. About this Program")
+    print("    8. Square Root(√a)                          16. About Creator")
+    print("                                                17. Quit this Program")
 
 
 # addition module
@@ -47,7 +48,7 @@ def add():
             break
         else:
             solution += float(_)
-            values[values.index(a)] = str(a)
+            values[values.index(_)] = str(_)
     return values, solution
 
 
@@ -75,7 +76,7 @@ def subtract():
             break
         else:
             solution -= float(_)
-            values[values.index(a)] = str(a)
+            values[values.index(_)] = str(_)
     return values, solution
 
 
@@ -296,13 +297,20 @@ def circle():
 
 # restart app
 def restart_app():
-    resp = input("Do you want to start over? ").upper()
-    if resp in ['YES', 'Y']:
-        print(" ")
-        return True
+    resp = ""
+    while resp not in ['YES', 'Y', 'YUP', 'YE', 'NO', 'N', 'NOPE', 'NAH']:
+        resp = input("Do you want to start over?").upper()
+        if resp in ['YES', 'Y', 'YUP', 'YE']:
+            return True
+        elif resp in ['NO', 'N', 'NOPE', 'NAH']:
+            return False
+        else:
+            print("Yes. or No.")
+            resp = ""
+
+    # main code
 
 
-# main code
 print("Welcome to my AdvancedCalculator!")
 print(" ")
 print("This project is entirely made in Python as a learning milestone. If you have any suggestion, make sure to "
@@ -332,7 +340,7 @@ while True:
         print(" ")
 
         opt = 0
-        while opt not in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]:
+        while opt not in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]:
             try:
                 opt = int(input("Enter your choice: "))
             except ValueError:
@@ -415,7 +423,7 @@ while True:
                 print(f"Diameter of the Circle: {a[3]}")
                 break
             elif opt == 15:
-                print("\n"*100)
+                print("\n" * 100)
                 print("[+] About this program:")
                 print(" ")
                 print("This is a small, but feature filled calculator, made entirely in Python. More features to be "
@@ -443,6 +451,21 @@ while True:
                 options()
                 print(" ")
                 opt = 0
+            elif opt == 16:
+                print("\n" * 100)
+                print("[+] About the creator:")
+                print(" ")
+                print("I enjoy writing programs to help me with daily life things, nothing much. Aspiring to be a "
+                      "competitive programmer one day. Nothing much. But thank you for using my program!")
+                print(" ")
+                print(" ")
+                input("Pres Return/Enter to go back to main menu. ")
+                print(" ")
+                options()
+                print(" ")
+                opt = 0
+            elif opt == 17:
+                break
         break
 
     if not restart_app():
