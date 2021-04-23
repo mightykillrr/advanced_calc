@@ -300,12 +300,12 @@ def circle():
 
 
 # copy result
-def ask_save(rslt):
-    resp2 = input("Want me to copy the results to your clipboard? Only the solution is copied. ").upper()
-    if resp2 in ['YES', 'Y']:
-        df = DataFrame([rslt])
-        df.to_clipboard(index=False, header=False)
-    return "Successfully copied the result to your clipboard!"
+# def ask_save(rslt):
+#    resp2 = input("Want me to copy the results to your clipboard? Only the solution is copied. ").upper()
+#    if resp2 in ['YES', 'Y']:
+#        df = DataFrame([rslt])
+#        df.to_clipboard(index=False, header=False)
+#    return "Successfully copied the result to your clipboard!"
 
 
 # restart app
@@ -353,57 +353,57 @@ while True:
             if opt == 1:
                 a = add()
                 print(f"{' + '.join(a[0])} = {a[1]}")
-                ask_save({a[1]})
+                # ask_save({a[1]})
                 break
             elif opt == 2:
                 a = subtract()
                 print(f"{' - '.join(a[0])} = {a[1]}")
-                ask_save({a[1]})
+                # ask_save({a[1]})
                 break
             elif opt == 3:
                 a = multiply()
                 print(f"{' x '.join(a[0])} = {a[1]}")
-                ask_save({a[1]})
+                # ask_save({a[1]})
                 break
             elif opt == 4:
                 a = division()
                 print(f"{'/'.join(a[0])} = {a[1]}")
-                ask_save({a[1]})
+                # ask_save({a[1]})
                 break
             elif opt == 5:
                 a = percentof()
                 print(f"{a[0][0]}% of {a[0][1]} is {a[1]}")
-                ask_save({a[1]})
+                # ask_save({a[1]})
                 break
             elif opt == 6:
                 a = percentin()
                 print(f"{a[0][0]} is {a[1]}% of {a[0][1]}")
-                ask_save({a[1]})
+                # ask_save({a[1]})
                 break
             elif opt == 7:
                 a = power()
                 print(f"{a[0][0]}^{a[0][1]} is {a[1]}")
-                ask_save({a[1]})
+                # ask_save({a[1]})
                 break
             elif opt == 8:
                 a = sqrt()
                 print(f"Square root of {a[0][0]} is {a[1]}")
-                ask_save({a[1]})
+                # ask_save({a[1]})
                 break
             elif opt == 9:
                 a = sin()
                 print(f"sin({a[0][0]}) = {a[1]}")
-                ask_save({a[1]})
+                # ask_save({a[1]})
                 break
             elif opt == 10:
                 a = cos()
                 print(f"cos({a[0][0]}) = {a[1]}")
-                ask_save({a[1]})
+                # ask_save({a[1]})
                 break
             elif opt == 11:
                 a = tan()
                 print(f"tan({a[0][0]}) = {a[1]}")
-                ask_save({a[1]})
+                # ask_save({a[1]})
                 break
             elif opt == 12:
                 a = square()
@@ -427,6 +427,33 @@ while True:
                 print(f"Area of the Circle: {a[2]}")
                 print(f"Diameter of the Circle: {a[3]}")
                 break
+            elif opt == 15:
+                print("\n"*100)
+                print("[+] About this program:")
+                print(" ")
+                print("This is a small, but feature filled calculator, made entirely in Python. More features to be added very soon!")
+                print("I thank you from my heart for giving this program a try. I hope you enjoy it.")
+                print(" ")
+                print("[-] About the functions in the menu: ")
+                print("  [>] Add: Takes two or more numbers and returns their sum. Press return/enter after each "
+                      "number. When done leave blank and press return/enter at the end.")
+                print("  [>] Subtract: Same as Add, just returns the result after subtracting the entered values.")
+                print("  [>] Multiply: Same as Add, just returns the result after multiplying the entered values.")
+                print("  [>] Divide: Takes in two numbers and divides them.")
+                print("  [>] Percent of: Returns how much of a% is in b. User gives the values of a and b.")
+                print("  [>] Percent in: Returns % of a in b. User gives the values of a and b.")
+                print("  [>] Power of: Takes  in two values, a and b, and puts in the equation -> a^b.")
+                print("  [>] Square Root: Gives the square root of the given number.")
+                print("  [>] Trignometric Functions(sin, cos, tan): Takes in a in degrees and returns their trignometric values.")
+                print("  [>] Shapes(Square, Rectangle, Circle): Takes side, length and width, or radius and returns "
+                      "respective values(perimeter/ circumference, area, diagonal/diameter).")
+                print(" ")
+                print(" ")
+                input("Pres Return/Enter to go back to main menu. ")
+                print(" ")
+                options()
+                print(" ")
+                opt = 0
         break
 
     if not restart_app():
